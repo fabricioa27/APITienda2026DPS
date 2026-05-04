@@ -8,6 +8,8 @@ const routes = require('./routes');
 
 const app = express();
 
+app.set('trust proxy',1);
+
 const limiter = rateLimiter({
     windowMs: 30 * 60 * 1000, // 30 minutos
     max: 1000, // 1000 solicitudes por ventana
